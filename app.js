@@ -4,6 +4,8 @@ new Vue({
     name: "Ahmet",
     job: "Developer",
     age: 30,
+    x: 0,
+    y: 0,
   },
   methods: {
     greet: function (time) {
@@ -14,6 +16,10 @@ new Vue({
     },
     subtract: function (dec) {
       this.age -= dec;
+    },
+    updateXY: function (event) {
+      this.x = event.offsetX;
+      this.y = event.offsetY;
     },
   },
 });
