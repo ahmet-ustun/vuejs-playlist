@@ -1,31 +1,12 @@
-const one = new Vue({
-  el: "#vue-app-one",
+new Vue({
+  el: "#vue-app",
   data: {
-    title: "Vue App One",
-  },
-  methods: {},
-  computed: {
-    greet: function () {
-      return "Hello from app one :)";
-    },
-  },
-});
-
-const two = new Vue({
-  el: "#vue-app-two",
-  data: {
-    title: "Vue App Two",
+    output: "Your fav food",
   },
   methods: {
-    changeTitle: function () {
-      one.title = "Title changed";
-    },
-  },
-  computed: {
-    greet: function () {
-      return "Yo dudes, this is app two speaking!";
+    readRefs() {
+      console.log(this.$refs);
+      this.output = this.$refs.input.value;
     },
   },
 });
-
-two.title = "Changed from outside";
