@@ -1,16 +1,16 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <ninjas />
+    <ninja-list />
   </div>
 </template>
 
 <script>
-import Ninjas from './Ninjas.vue'
+import NinjaList from './NinjaList.vue'
 
 export default {
   components: {
-    'ninjas': Ninjas,
+    NinjaList,
   },
   data() {
     return {
@@ -21,4 +21,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+h1 {
+  color: purple;
+}
+</style>
