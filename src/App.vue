@@ -1,8 +1,10 @@
 <template>
   <div>
-    <app-header />
+    <app-header v-bind:title="title" />
     <ninja-list v-bind:ninjas="ninjas" />
-    <app-footer />
+    <hr />
+    <ninja-list v-bind:ninjas="ninjas" />
+    <app-footer v-bind:title="title" />
   </div>
 </template>
 
@@ -19,6 +21,7 @@ export default {
   },
   data() {
     return {
+      title: "Vue Ninjas",
       ninjas: [
         { name: "Ryu", speciality: "Vue Components", show: false },
         { name: "Crystal", speciality: "HTML Wizardry", show: false },

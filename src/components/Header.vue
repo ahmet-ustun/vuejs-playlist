@@ -1,13 +1,24 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1 v-on:mouseover="changeTitle">{{ title }}</h1>
   </header>
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
-    return { title: "Vue Ninjas" };
+    return {};
+  },
+  methods: {
+    changeTitle() {
+      this.title = "Vue Wizards";
+    },
   },
 };
 </script>

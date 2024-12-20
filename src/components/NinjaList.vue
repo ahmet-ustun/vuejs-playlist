@@ -13,9 +13,9 @@
 export default {
   props: {
     ninjas: {
-      type: String,
+      type: Array,
       required: true,
-    }
+    },
   },
   data() {
     return {};
