@@ -1,28 +1,26 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    <app-header />
     <ninja-list />
+    <app-footer />
   </div>
 </template>
 
 <script>
-import NinjaList from './NinjaList.vue'
+import Header from "./components/Header.vue";
+import NinjaList from "./components/NinjaList.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   components: {
+    "app-header": Header,
     NinjaList,
+    "app-footer": Footer,
   },
   data() {
-    return {
-      title: "Ninja App",
-    };
+    return {};
   },
-  methods: {},
 };
 </script>
 
-<style scoped>
-h1 {
-  color: purple;
-}
-</style>
+<style></style>
