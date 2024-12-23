@@ -5,12 +5,51 @@
       <label for="blog-title">Blog Title</label>
       <input id="blog-title" type="text" v-model.lazy="blog.title" required />
       <label for="blog-content">Blog Content</label>
-      <textarea id="blog-content" v-model.lazy="blog.content" required></textarea>
+      <textarea
+        id="blog-content"
+        v-model.lazy="blog.content"
+        required
+      ></textarea>
+      <div id="checkboxes">
+        <label for="ninjas">Ninjas</label>
+        <input
+          id="ninjas"
+          type="checkbox"
+          value="ninjas"
+          v-model="blog.categories"
+        />
+        <label for="wizards">Wizards</label>
+        <input
+          id="wizards"
+          type="checkbox"
+          value="wizards"
+          v-model="blog.categories"
+        />
+        <label for="mario">Mario</label>
+        <input
+          id="mario"
+          type="checkbox"
+          value="mario"
+          v-model="blog.categories"
+        />
+        <label for="cheese">Cheese</label>
+        <input
+          id="cheese"
+          type="checkbox"
+          value="cheese"
+          v-model="blog.categories"
+        />
+      </div>
     </form>
     <div id="preview">
       <h3>Preview Blog</h3>
       <p>Blog Title: {{ blog.title }}</p>
-      <p>Blog Content: {{ blog.content }}</p>
+      <p>Blog Content:</p>
+      <p>{{ blog.content }}</p>
+      <p>Blog Categories:</p>
+      <ul>
+        <li v-for="category in blog.categories">{{ category }}</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -23,6 +62,7 @@ export default {
       blog: {
         title: "",
         content: "",
+        categories: [],
       },
     };
   },
@@ -55,5 +95,12 @@ textarea {
 }
 h3 {
   margin-top: 10px;
+}
+#checkboxes input {
+  display: inline-block;
+  margin-right: 10px;
+}
+#checkboxes label {
+  display: inline-block;
 }
 </style>
