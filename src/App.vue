@@ -3,7 +3,8 @@
     <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)" />
     <ninja-list v-bind:ninjas="ninjas" />
     <hr />
-    <ninja-list v-bind:ninjas="ninjas" />
+    <button v-on:click="deleteNinja">Delete Ninja</button>
+    <hr />
     <app-footer v-bind:title="title" />
   </div>
 </template>
@@ -34,9 +35,12 @@ export default {
   },
   methods: {
     updateTitle(updatedTitle) {
-      this.title = updatedTitle
-    }
-  }
+      this.title = updatedTitle;
+    },
+    deleteNinja() {
+      this.ninjas.pop();
+    },
+  },
 };
 </script>
 
