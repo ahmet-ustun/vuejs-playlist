@@ -88,7 +88,6 @@ export default {
           this.blog
         )
         .then((data) => {
-          console.log(data);
           this.submitted = true;
         });
     },

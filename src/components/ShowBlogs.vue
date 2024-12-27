@@ -8,7 +8,7 @@
           {{ blog.title | toUppercase }}
         </h2>
       </router-link>
-      <article>{{ blog.body | snippet }}</article>
+      <article>{{ blog.content | snippet }}</article>
     </div>
   </div>
 </template>
@@ -25,10 +25,21 @@ export default {
   },
   created() {
     this.$http
-      .get("https://jsonplaceholder.typicode.com/posts")
+      .get(
+        "https://vuejs-playlist-275c1-default-rtdb.europe-west1.firebasedatabase.app/posts.json"
+      )
+      .then((response) => {
+        return response.json();
+      })
       .then((data) => {
-        console.log(data);
-        this.blogs = data.body.slice(0, 10);
+        const blogsArray = [];
+
+        for (let key in data) {
+          data[key].id = key;
+          blogsArray.push(data[key]);
+        }
+
+        this.blogs = blogsArray;
       });
   },
   mixins: [SearchMixin],

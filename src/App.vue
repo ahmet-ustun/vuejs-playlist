@@ -13,13 +13,11 @@ import ListBlogs from "./components/ListBlogs.vue";
 
 export default {
   components: {
-    'app-header': Header,
+    "app-header": Header,
     AddBlog,
     ShowBlogs,
     ListBlogs,
   },
-  data() {},
-  methods: {},
 };
 </script>
 

@@ -5,7 +5,6 @@ new Vue({
   },
   methods: {
     readRefs() {
-      console.log(this.$refs);
       this.output = this.$refs.input.value;
     },
   },
