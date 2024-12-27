@@ -83,11 +83,10 @@ export default {
   methods: {
     post() {
       this.$http
-        .post("https://jsonplaceholder.typicode.com/posts", {
-          userId: 1,
-          title: this.blog.title,
-          body: this.blog.content,
-        })
+        .post(
+          "https://vuejs-playlist-275c1-default-rtdb.europe-west1.firebasedatabase.app/posts.json",
+          this.blog
+        )
         .then((data) => {
           console.log(data);
           this.submitted = true;
