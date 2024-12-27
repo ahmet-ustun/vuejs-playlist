@@ -7,7 +7,7 @@ Vue.use(VueResource);
 // Custom Directives
 Vue.directive("rainbow", {
   bind(el, binding, vnode) {
-    el.style.color = `#${Math.random().toString().slice(2, 8)}`;
+    el.style.color = "#" + Math.random().toString().slice(2, 8);
   },
 });
 
@@ -25,6 +25,11 @@ Vue.directive("theme", {
     }
   },
 });
+
+// Filters
+Vue.filter("toUppercase", (value) => value.toUpperCase());
+
+Vue.filter("snippet", (value) => value.slice(0, 100) + "...");
 
 new Vue({
   el: "#app",
