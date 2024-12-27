@@ -1,15 +1,17 @@
 <template>
   <div>
-    <add-blog />
+    <show-blogs />
   </div>
 </template>
 
 <script>
-import AddBlog from './components/AddBlog.vue';
+import AddBlog from "./components/AddBlog.vue";
+import ShowBlogs from "./components/ShowBlogs.vue";
 
 export default {
   components: {
     AddBlog,
+    ShowBlogs,
   },
   data() {},
   methods: {},
@@ -19,6 +21,6 @@ export default {
 <style>
 body {
   margin: 0;
-  font-family: "Nunito SemiBold";
+  font-family: Arial, sans-serif;
 }
 </style>
