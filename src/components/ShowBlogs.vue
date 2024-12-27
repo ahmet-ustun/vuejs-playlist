@@ -1,5 +1,5 @@
 <template>
-  <div id="show-blogs" v-theme:column="'narrow'">
+  <div id="show-blogs" v-theme="'narrow'">
     <h1>All Blog Articles</h1>
     <input type="text" v-model="search" placeholder="Search Blogs" />
     <div class="single-blog" v-for="blog in filteredBlogs">
